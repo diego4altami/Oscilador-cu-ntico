@@ -1,0 +1,184 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5910,        174]
+NotebookOptionsPosition[      5021,        151]
+NotebookOutlinePosition[      5418,        167]
+CellTagsIndexPosition[      5375,        164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", " ", 
+      RowBox[{"f", "[", "x", "]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "/", 
+        RowBox[{"P", "[", "x", "]"}]}], ")"}], " ", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"P", "[", "x", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "2"}], "}"}]}], "]"}]}], "+", 
+     RowBox[{"b", " ", 
+      RowBox[{"x", "^", "2"}]}], "+", "c"}], "==", "0"}], ",", 
+   RowBox[{"P", "[", "x", "]"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.902318079687248*^9, 3.9023180908145037`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"6f9a4e3a-439e-492e-979a-9f48eef8b604"],
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"c", "+", 
+     RowBox[{"b", " ", 
+      SuperscriptBox["x", "2"]}], "+", 
+     FractionBox[
+      RowBox[{"a", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "-", "a"}], ")"}], " ", 
+           SuperscriptBox["x", "2"]}], ")"}]}]], " ", 
+       RowBox[{
+        SuperscriptBox["P", "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}]}], 
+      RowBox[{"P", "[", "x", "]"}]]}], "\[Equal]", "0"}], ",", 
+   RowBox[{"P", "[", "x", "]"}], ",", "x"}], "]"}]], "Output",
+ CellChangeTimes->{3.902318092404437*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"bdcca237-a416-4ae1-a2cf-255c03a11b0a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x_", "]"}], ":=", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"x", "^", "2"}]}], "*", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", "a"}], ")"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", " ", 
+        RowBox[{"f", "[", "x", "]"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "/", 
+          RowBox[{"P", "[", "x", "]"}]}], ")"}], " ", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"P", "[", "x", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "2"}], "}"}]}], "]"}]}], "+", 
+       RowBox[{"b", " ", 
+        RowBox[{"x", "^", "2"}]}], "+", "c"}], "==", "0"}], ",", 
+     RowBox[{"P", "[", "x", "]"}], ",", "x"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.902318095150764*^9, 3.902318098952935*^9}, {
+  3.9023181416873007`*^9, 3.9023181930325003`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"c8cbc728-29d8-464b-866d-595a3a610873"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve", "ndlim", 
+   "\"Range specification \\!\\(\\*RowBox[{\\\"x\\\"}]\\) is not of the form \
+{x, xend} or {x, xmin, xmax}.\"", 2, 17, 16, 27418243072614313352, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.902318182909013*^9, 3.902318193673764*^9}},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[16]:=",ExpressionUUID->"7c798227-f5ed-42b6-9576-4d021a38e5b9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NDSolve", "ndnco", 
+   "\"The number of constraints (\\!\\(\\*RowBox[{\\\"0\\\"}]\\)) (initial \
+conditions) is not equal to the total differential order of the system plus \
+the number of discrete variables (\\!\\(\\*RowBox[{\\\"2\\\"}]\\)).\"", 2, 17,
+    17, 27418243072614313352, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.902318182909013*^9, 3.902318193679862*^9}},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[16]:=",ExpressionUUID->"aa361145-bd22-41cd-8291-74d2a76441cb"],
+
+Cell[BoxData[
+ RowBox[{"NDSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"c", "+", 
+     RowBox[{"b", " ", 
+      SuperscriptBox["x", "2"]}], "+", 
+     FractionBox[
+      RowBox[{"a", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "-", "a"}], ")"}], " ", 
+           SuperscriptBox["x", "2"]}], ")"}]}]], " ", 
+       RowBox[{
+        SuperscriptBox["P", "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}]}], 
+      RowBox[{"P", "[", "x", "]"}]]}], "\[Equal]", "0"}], ",", 
+   RowBox[{"P", "[", "x", "]"}], ",", "x"}], "]"}]], "Output",
+ CellChangeTimes->{{3.9023181829200163`*^9, 3.902318193685235*^9}},
+ CellLabel->"Out[17]=",ExpressionUUID->"ff7f7e4f-a2d0-4e6a-9764-2e894f0dccec"]
+}, Open  ]]
+},
+WindowSize->{808, 686},
+WindowMargins->{{Automatic, 64}, {46, Automatic}},
+FrontEndVersion->"13.0 para Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f60832f5-6ece-4a6c-9dd8-afcf8bb59fec"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 700, 19, 44, "Input",ExpressionUUID->"6f9a4e3a-439e-492e-979a-9f48eef8b604"],
+Cell[1283, 43, 793, 22, 61, "Output",ExpressionUUID->"bdcca237-a416-4ae1-a2cf-255c03a11b0a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2113, 70, 1082, 30, 101, "Input",ExpressionUUID->"c8cbc728-29d8-464b-866d-595a3a610873"],
+Cell[3198, 102, 431, 9, 28, "Message",ExpressionUUID->"7c798227-f5ed-42b6-9576-4d021a38e5b9"],
+Cell[3632, 113, 549, 11, 46, "Message",ExpressionUUID->"aa361145-bd22-41cd-8291-74d2a76441cb"],
+Cell[4184, 126, 821, 22, 84, "Output",ExpressionUUID->"ff7f7e4f-a2d0-4e6a-9764-2e894f0dccec"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
